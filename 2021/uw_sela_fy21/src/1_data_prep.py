@@ -24,16 +24,16 @@ sf = Salesforce(username=SF_USERNAME, password=SF_PASS, security_token=SF_TOKEN)
 
 
 # Sample for loading from SOQL
-student_list = SF_SOQL("student_list", soql.student_list_query)
+student_list = SF_SOQL("student_list_ay2020_21", soql.student_list_query)
 student_list.load_from_sf_soql(sf)
 student_list.write_file(subfolder="raw", file_type=".csv", file_level="child")
 
-workshop_data = SF_SOQL("workshops", soql.workshop_query)
+workshop_data = SF_SOQL("workshops_ay2020_21", soql.workshop_query)
 workshop_data.load_from_sf_soql(sf)
 workshop_data.write_file(subfolder="raw", file_type=".csv", file_level="child")
 
 
-scholarship_data = SF_SOQL("scholarships", soql.scholarship_query)
+scholarship_data = SF_SOQL("scholarships_ay2020_21", soql.scholarship_query)
 scholarship_data.load_from_sf_soql(sf)
 scholarship_data.write_file(subfolder="raw", file_type=".csv", file_level="child")
 
@@ -98,4 +98,4 @@ df["Income Bucket"] = df.apply(
 )
 # saving results
 
-df.to_pickle("../data/processed/merged_data.pkl")
+df.to_pickle("../data/processed/merged_data_ay_2020_21.pkl")

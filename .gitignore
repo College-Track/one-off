@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 
+*/dp-cache/*
 # C extensions
 *.so
 
@@ -99,6 +100,8 @@ target/
 
 *.csv
 *.xlsx
+
+*.pkl
 
 *.xls
 *.pdf

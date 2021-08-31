@@ -22,12 +22,11 @@ RecordType.Name,
 Student__r.Citizen_c__c,
 Student__r.Most_Recent_GPA_Cumulative__c
 FROM Academic_Semester__c
-WHERE Global_Academic_Semester__r.Name LIKE '%Fall 2020-21%' AND 
+WHERE Global_Academic_Semester__r.Name LIKE '%Spring 2020-21%' AND 
 Student__r.SITE__r.Name = 'College Track New Orleans' AND 
-student_audit_status__c IN (
-    'Current CT HS Student', 
-    'Leave of Absence', 
-    'Active: Post-Secondary'
+Student__r.AY_2020_21_Student_Served__c IN (
+    'High School Student', 
+    'Post-Secondary Student'
     )
 """
 
@@ -42,12 +41,11 @@ Attendance_Numerator__c,
 Attendance_Denominator__c,
 Workshop_Enrollment__r.Status__c
 FROM Class_Attendance__c
-WHERE Academic_Semester__r.Global_Academic_Semester__r.Name LIKE '%Summer 2019-20%' AND 
+WHERE Academic_Semester__r.Global_Academic_Semester__r.Name LIKE '%Summer 2020-21%' AND 
 Student__r.SITE__r.Name = 'College Track New Orleans' AND 
-Academic_Semester__r.student_audit_status__c IN (
-    'Current CT HS Student', 
-    'Leave of Absence', 
-    'Active: Post-Secondary'
+Student__r.AY_2020_21_Student_Served__c IN (
+    'High School Student', 
+    'Post-Secondary Student'
     ) AND 
 (
     Workshop_Dosage_Type__c LIKE '%Math Blast%' OR 
@@ -64,8 +62,6 @@ Status__c
 FROM Scholarship_Application__c
 WHERE Student__r.SITE__r.Name = 'College Track New Orleans' AND 
 RecordType.Name = 'External' AND 
-Status__c != NULL AND 
-Date_Applied_date__c >= 2020-07-01 AND 
-Date_Applied_date__c < 2021-01-01
+Status__c != NULL
 """
 
