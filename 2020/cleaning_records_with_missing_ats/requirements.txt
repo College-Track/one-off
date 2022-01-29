@@ -6,7 +6,7 @@ Authlib==0.14.3
 autopep8==1.5.4
 backcall==0.2.0
 black==19.10b0
-bleach==3.1.5
+bleach==3.3.0
 certifi==2020.6.20
 cffi==1.14.2
 chardet==3.0.4
